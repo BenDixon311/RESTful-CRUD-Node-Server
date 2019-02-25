@@ -1,20 +1,27 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const path = require('path');
 
 
 
 
 const app = express();
 
-app.use(bodyParser.urlencoded({useNewUrlParser: true}));
+
+const playerRoutes = require('./routes/edit-route');
+
+app.use(bodyParser.urlencoded({extended: false, useNewUrlParser: true}));
 
 
 
-mongoose.connect('mongodb+srv://Ben:epitaph311@myfirstcluster-1t85r.mongodb.net/shop?retryWrites=true')
+app.use('/', playerRoutes);
+
+
+mongoose.connect('mongodb+srv://Ben:epitaph311@myfirstcluster-1t85r.mongodb.net/players?retryWrites=true', {useNewUrlParser: true})
     .then(result => {
-        console.log(result);
         app.listen(5000);
+        console.log('Server is running on port: 5000')
     }).catch(err => {
         console.log(err);
     })

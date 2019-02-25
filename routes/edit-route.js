@@ -3,7 +3,7 @@ const playerController = require('../controllers/edit-player');
 
 const router = express.Router();
 
-router.get('/:id', playerController.getAllPlayers);
+router.get('/', playerController.getAllPlayers);
 
 router.get('/name/:name', playerController.getOnePlayer);
 
@@ -14,3 +14,6 @@ router.put('/update/:id', playerController.updatePlayer);
 router.delete('/delete/:id', playerController.deletePlayer);
 
 router.post('/create', playerController.addPlayer);
+
+
+module.exports = router;

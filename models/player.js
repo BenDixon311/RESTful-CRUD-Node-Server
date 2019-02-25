@@ -2,17 +2,21 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const necklaceSchema = new Schema(
+const playerSchema = new Schema(
     {
-        title: {
+        name: {
             type: String,
             required: true
         },
-        price: {
+        number: {
             type: Number,
             required: true
         },
-        description: {
+        team: {
+            type: String,
+            required: true
+        },
+        position: {
             type: String,
             required: true
         }
@@ -20,4 +24,4 @@ const necklaceSchema = new Schema(
     }
 );
 
-module.exports = mongoose.model('Necklace', necklaceSchema);
+module.exports = mongoose.model('Players', playerSchema);

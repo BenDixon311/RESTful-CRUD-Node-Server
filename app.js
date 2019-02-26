@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({extended: false, useNewUrlParser: true}));
 
 
 
-app.use('/api', playerRoutes);
+app.use('/', playerRoutes);
 
 
 mongoose.connect('mongodb+srv://Ben:epitaph311@myfirstcluster-1t85r.mongodb.net/players?retryWrites=true', {useNewUrlParser: true})

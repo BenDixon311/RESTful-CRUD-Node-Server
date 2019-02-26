@@ -1,21 +1,18 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const path = require('path');
-
-
-
 
 const app = express();
 
 
 const playerRoutes = require('./routes/edit-route');
 
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false, useNewUrlParser: true}));
 
 
 
-app.use('/', playerRoutes);
+app.use('/api', playerRoutes);
 
 
 mongoose.connect('mongodb+srv://Ben:epitaph311@myfirstcluster-1t85r.mongodb.net/players?retryWrites=true', {useNewUrlParser: true})

@@ -11,7 +11,7 @@ exports.addPlayer = (req, res, next) => {
         .save()
         .then(result => {
             console.log('Player Created');
-            res.redirect('/');
+            
         })
         .catch(err => {
             console.log(err);
@@ -58,20 +58,12 @@ exports.getAllPlayers = async (req, res, next) => {
 };
 
 exports.updatePlayer = (req, res, next) => {
-    const playerId = req.body.id;
-    const updatedName = req.body.name;
-    const updatedNumber = req.body.number;
-    const updatedTeam = req.body.team;
-    const updatedPosition = req.body.position;
 
-    Player.findByIdAndUpdate(playerId, {
-        name: updatedName,
-        number: updatedNumber,
-        team: updatedTeam,
-        position: updatedPosition
-    })
+    Player.findByIdAndUpdate(req.params.id,
+        {$set: req.body}
+    )
     .then(result => {
-        res.status(201) //maybe change this to 200
+        res.status(200)
             .send('Updated Player')
     })
     .catch(err => {

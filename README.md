@@ -1,6 +1,5 @@
-# RESTful-CRUD-Node-Server
-
-# Ben's Roster Updater
+# Ben's NBA Roster Updater
+## Deployed on Heroku - https://restful-crud-node-server.herokuapp.com/
 
 ## Data Structure:
   `
@@ -11,7 +10,8 @@
     "position": String
   }`
   
-# Endpoints
+# Endpoints 
+## Use Postman ( https://www.getpostman.com/ ) to use CRUD features
 ### GET All Players
   - Use `/` to view all players
   
@@ -32,4 +32,4 @@
   - use `/delete/:id` to delete player data
   
  
-Postman was used to fill the server with data
+

@@ -18,7 +18,7 @@ app.use('/', playerRoutes);
 mongoose.connect('mongodb+srv://Ben:epitaph311@myfirstcluster-1t85r.mongodb.net/players?retryWrites=true', {useNewUrlParser: true})
     .then(result => {
         app.listen(process.env.port || 5000);
-        console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+        console.log("Express server listening");
     }).catch(err => {
         console.log(err);
     })

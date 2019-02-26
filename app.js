@@ -24,7 +24,7 @@ app.use((req, res, next) => {
 
 mongoose.connect('mongodb+srv://Ben:epitaph311@myfirstcluster-1t85r.mongodb.net/players?retryWrites=true', {useNewUrlParser: true})
     .then(result => {
-        app.listen(process.env.port || 5000);
+        app.listen(process.env.PORT || 5000);
         console.log("Express server listening");
     }).catch(err => {
         console.log(err);

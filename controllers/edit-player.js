@@ -10,6 +10,7 @@ exports.addPlayer = (req, res, next) => {
     player
         .save()
         .then(result => {
+            res.status(201).redirect('/');
             console.log('Player Created');
             
         })

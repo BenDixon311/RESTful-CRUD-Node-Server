@@ -20,9 +20,9 @@ const playerSchema = new Schema(
             type: String,
             required: true
         },
-        image: {
+        imgurl: {
             type: String,
-            
+            required: true
         }
 
     }

@@ -5,7 +5,8 @@ exports.addPlayer = (req, res, next) => {
     const number = req.body.number;
     const team = req.body.team;
     const position = req.body.position;
-    const player = new Player({ name: name, number: number, team: team, position: position });
+    const imgurl = req.body.imgurl;
+    const player = new Player({ name: name, number: number, team: team, position: position, imgurl: imgurl });
 
     player
         .save()

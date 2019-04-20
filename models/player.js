@@ -19,6 +19,10 @@ const playerSchema = new Schema(
         position: {
             type: String,
             required: true
+        },
+        image: {
+            type: String,
+            
         }
 
     }

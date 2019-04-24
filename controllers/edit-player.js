@@ -82,6 +82,7 @@ exports.deletePlayer = (req, res, next) => {
             .send({
                 confirmation: 'Player Deleted'
             })
+            .redirect('localhost:3000')
     })
     .catch(err => {
         console.log(err);

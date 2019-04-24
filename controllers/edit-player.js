@@ -78,11 +78,7 @@ exports.deletePlayer = (req, res, next) => {
 
     Player.findByIdAndDelete(playerId)
     .then(result => {
-        res.status(200)
-            .send({
-                confirmation: 'Player Deleted'
-            })
-            .redirect('localhost:3000')
+        res.status(200).redirect('localhost:3000/')
     })
     .catch(err => {
         console.log(err);

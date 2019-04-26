@@ -5,6 +5,8 @@ const router = express.Router();
 
 router.get('/', playerController.getAllPlayers);
 
+router.get('/:id', playerControler.getPlayerById);
+
 router.get('/name/:name', playerController.getOnePlayer);
 
 router.get('/team/:team', playerController.getTeam);

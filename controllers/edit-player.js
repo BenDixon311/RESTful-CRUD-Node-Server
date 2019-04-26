@@ -20,6 +20,15 @@ exports.addPlayer = (req, res, next) => {
         });
 };
 
+exports.getPlayerById = (req, res, next) => {
+    const playerId = req.params.id;
+
+   Player.findById(playerId)
+   .then(result => {
+       res.send(result);
+   })
+}
+
 exports.getOnePlayer = (req, res, next) => {
     const player = req.params.name;
 
